@@ -5,6 +5,10 @@
     <p> <%= @job.company %></p>
     <p> <%= @job.description %></p>
     <p> <%= @job.location %></p>
+
+    <% if @job.featured %>
+      <strong>Destaque</strong>
+    <% end %>
   </div>
 
   <%= link_to 'Voltar', root_path %>
