@@ -6,5 +6,11 @@
     <p> <%= @company.phone %></p>
   </div>
 
+  <% if @company.jobs.any? %>
+  	<%= render 'jobs_by_company', jobs: @company.jobs %>
+  <% else %>
+  	<div class="message">Nenhuma vaga disponível</div>
+  <% end %>
+
   <%= link_to 'Voltar', root_path %>
 </div>
