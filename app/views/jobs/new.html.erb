@@ -1,4 +1,10 @@
 <div id="form-body">
+  <% if flash[:notice ] %>
+    <div class="message">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
   <%= form_for @job do |f| %>
     <%= f.label :title, 'Título' %>
     <%= f.text_field :title %>
