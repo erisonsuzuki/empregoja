@@ -9,7 +9,7 @@
   </div>
 
   <% if @company.jobs.any? %>
-  	<%= render 'jobs_by_company', jobs: @company.jobs %>
+  	<%= render @company.jobs %>
   <% else %>
   	<div class="message">Nenhuma vaga disponível</div>
   <% end %>

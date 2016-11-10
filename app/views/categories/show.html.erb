@@ -4,7 +4,7 @@
   </div>
 
   <% if @category.jobs.any? %>
-  	<%= render 'jobs_by_category', jobs: @category.jobs %>
+  	<%= render @category.jobs %>
   <% else %>
   	<div class="message">Nenhuma vaga disponível</div>
   <% end %>
