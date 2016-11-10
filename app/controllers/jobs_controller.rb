@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :target_job, only: [:show, :edit, :update]
-  before_action :companies_list, only: [:new, :edit]
+  before_action :set_variables, only: [:new, :edit]
 
   def show
   end
@@ -15,7 +15,7 @@ class JobsController < ApplicationController
     if @job.persisted?
       redirect_to job_path(@job)
     else
-      companies_list
+      set_variables
 
       flash.now[:notice] = "Não foi possível criar a vaga"
 
@@ -38,8 +38,9 @@ class JobsController < ApplicationController
 
   private
 
-  def companies_list
+  def set_variables
     @companies = Company.all
+    @categories = Category.all
   end
 
   def target_job
@@ -54,7 +55,8 @@ class JobsController < ApplicationController
       :company,
       :description,
       :featured,
-      :company_id
+      :company_id,
+      :category_id
     )
   end
 end
