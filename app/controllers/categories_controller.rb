@@ -9,10 +9,10 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.create(category_params)
+    @category = Category.new(category_params)
 
-    if @category.persisted?
-      redirect_to company_path(@category)
+    if @category.save
+      redirect_to category_path(@category)
     else
       flash.now[:notice] = "Não foi possível criar a categoria"
 
@@ -27,6 +27,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:company).permit(:name)
+    params.require(:category).permit(:name)
   end
 end
