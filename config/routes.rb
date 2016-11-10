@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :jobs
 
   resources :companies
+
+  resources :categories
 end
