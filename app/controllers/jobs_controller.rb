@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :target_job, only: [:show, :edit, :update]
+  before_action :get_job, only: [:show, :edit, :update]
   before_action :set_variables, only: [:new, :edit]
 
   def show
@@ -10,9 +10,9 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(job_params)
+    @job = Job.new(job_params)
 
-    if @job.persisted?
+    if @job.save
       redirect_to job_path(@job)
     else
       set_variables
@@ -27,9 +27,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job.update(job_params)
-
-    if @job.valid?
+    if @job.update(job_params)
       redirect_to job_path(@job)
     else
       redirect_to edit_job_path(@job), notice: 'Não foi possível atualizar a vaga'
@@ -43,7 +41,7 @@ class JobsController < ApplicationController
     @categories = Category.all
   end
 
-  def target_job
+  def get_job
     @job = Job.find params[:id]
   end
 

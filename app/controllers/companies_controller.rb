@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :target_company, only: [:show, :edit, :update]
+  before_action :get_company, only: [:show, :edit, :update]
 
   def show
   end
@@ -35,7 +35,7 @@ class CompaniesController < ApplicationController
 
   private
 
-  def target_company
+  def get_company
     @company = Company.find params[:id]
   end
 
