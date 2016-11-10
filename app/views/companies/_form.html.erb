@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="message">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <%= form_for @company do |f| %>
   <%= f.label :name, 'Nome' %>
   <%= f.text_field :name %>

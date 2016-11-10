@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :target_company, only: [:show]
+  before_action :target_company, only: [:show, :edit, :update]
 
   def show
   end
@@ -9,14 +9,27 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @company = Company.create(company_params)
+    @company = Company.new(company_params)
 
-    if @company.persisted?
+    if @company.save
       redirect_to company_path(@company)
     else
       flash.now[:notice] = "Não foi possível criar a empresa"
 
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @company.update(company_params)
+      redirect_to company_path(@company)
+    else
+      flash.now[:notice] = "Não foi possível atualizar a empresa"
+
+      render :edit
     end
   end
 
