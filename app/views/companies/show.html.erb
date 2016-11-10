@@ -1,4 +1,6 @@
 <div id="company-body">
+  <%= image_tag('estrela.png') if @company.premium? %>
+
   <div class="company-container">
     <h1> <%= @company.name %></h1>
     <p> <%= @company.location %></p>
