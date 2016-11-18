@@ -4,7 +4,11 @@
   </div>
 
   <% if @category.jobs.any? %>
-  	<%= render @category.jobs %>
+    <h2>Vagas</h2>
+
+    <section id="jobs" class="clearfix">
+    	<%= render @category.jobs %>
+    </section>
   <% else %>
   	<div class="message">Nenhuma vaga disponível</div>
   <% end %>

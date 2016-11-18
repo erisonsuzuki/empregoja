@@ -1,20 +1,14 @@
-#company-body{
-  section.company-container{
+#category-body{
+  .category-container{
     background: #eee;
-    padding: 10px;
+    padding: 10px 0 5px 0;
     margin: 20px 0;
 
     h1{
       color: blue;
       font-size: 23px;
-      margin-bottom: 20px;
       font-weight: bold;
       border-bottom: 1px solid #888;
-    }
-
-    p{
-      font-size: 20px;
-      line-height: 25px;
     }
   }
 
