@@ -10,7 +10,7 @@ feature 'User edit categories' do
 
     click_on 'Atualizar Categoria'
 
-    expect(page).to have_css('h1', text: 'Front-end')
+    expect(page).to have_css('h1', text: 'Back-end')
   end
 
   scenario 'with valid data' do
