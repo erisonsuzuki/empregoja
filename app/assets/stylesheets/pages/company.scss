@@ -1,0 +1,30 @@
+#company-body{
+  section.company-container{
+    background: #eee;
+    padding: 10px;
+    margin: 20px 0;
+
+    h1{
+      color: blue;
+      font-size: 23px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #888;
+    }
+
+    p{
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  h2{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  section#jobs{
+    width: 100%;
+  }
+}

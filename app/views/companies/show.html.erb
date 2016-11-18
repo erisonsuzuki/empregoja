@@ -1,15 +1,31 @@
 <div id="company-body">
   <%= image_tag('estrela.png') if @company.premium? %>
 
-  <div class="company-container">
+  <section class="company-container">
     <h1> <%= @company.name %></h1>
-    <p> <%= @company.location %></p>
-    <p> <%= @company.mail %></p>
-    <p> <%= @company.phone %></p>
-  </div>
+
+    <p>
+      <strong>Localização:</strong>
+      <%= @company.location %>
+    </p>
+
+    <p>
+      <strong>E-mail:</strong>
+      <%= @company.mail %>
+    </p>
+
+    <p>
+      <strong>Telefone:</strong>
+      <%= @company.phone %>
+    </p>
+  </section>
 
   <% if @company.jobs.any? %>
-  	<%= render @company.jobs %>
+    <h2>Vagas</h2>
+
+    <section id="jobs" class="clearfix">
+  	  <%= render @company.jobs %>
+    </section>
   <% else %>
   	<div class="message">Nenhuma vaga disponível</div>
   <% end %>
