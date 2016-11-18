@@ -1,5 +1,5 @@
 <% unless job.expired? %>
-  <article class="job-container">
+  <div class="job-container">
     <h1>
       <%= link_to job do %>
         <%= job.title %>
@@ -16,5 +16,5 @@
         <strong>Destaque</strong>
       </div>
     <% end %>
-  </article>
+  </div>
 <% end %>
