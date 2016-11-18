@@ -1,15 +1,20 @@
 <% unless job.expired? %>
-  <div class="job-container">
+  <article class="job-container">
     <h1>
-      <%= link_to job.title, job %>
-      <%= 'Novidade' if job.recent? %>
+      <%= link_to job do %>
+        <%= job.title %>
+        <%= ' (Novidade)' if job.recent? %>
+      <% end %>
     </h1>
+
+    <p><%= job.location %></p>
     <p><%= job.category.name %></p>
     <p><%= job.company.name %></p>
-    <p><%= job.location %></p>
 
     <% if job.featured %>
-      <strong>Destaque</strong>
+      <div class="highlight">
+        <strong>Destaque</strong>
+      </div>
     <% end %>
-  </div>
+  </article>
 <% end %>
