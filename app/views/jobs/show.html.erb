@@ -1,19 +1,36 @@
 <div id="job-body">
-  <div class="job-container">
-    <% if @job.expired? %>
-      <strong>Vaga Expirada</strong>
-    <% end %>
-
-    <h1> <%= @job.title %></h1>
-    <p> <%= @job.category.name %></p>
-    <p> <%= @job.company.name %></p>
-    <p> <%= @job.description %></p>
-    <p> <%= @job.location %></p>
-
+  <section class="job">
     <% if @job.featured %>
-      <strong>Destaque</strong>
+      <div class="highlight">
+        <strong>Destaque</strong>
+      </div>
     <% end %>
-  </div>
 
-  <%= link_to 'Voltar', root_path %>
+    <h1><%= @job.title %></h1>
+
+    <p>
+      <strong>Categoria</strong>
+      <%= @job.category.name %>
+    </p>
+    <p>
+      <strong>Empresa</strong>
+      <%= @job.company.name %>
+    </p>
+    <p>
+      <strong>Descrição</strong>
+      <%= @job.description %>
+    </p>
+    <p>
+      <strong>Localização</strong>
+      <%= @job.location %>
+    </p>
+  </section>
+
+  <% if @job.expired? %>
+    <div class="message">
+      <strong>Vaga Expirada</strong>
+    </div>
+  <% end %>
 </div>
+
+<%= link_to 'Voltar', root_path %>

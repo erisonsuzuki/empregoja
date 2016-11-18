@@ -1,0 +1,33 @@
+#job-body{
+  section.job{
+    position: relative;
+    background: #eee;
+    padding: 10px;
+    margin: 20px 0;
+
+    h1{
+      color: blue;
+      font-size: 23px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid #888;
+    }
+
+    p{
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    .highlight{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120px;
+      text-align: center;
+      color: #fff;
+      font-size: 23px;
+      line-height: 30px;
+      background: #333;
+    }
+  }
+}
