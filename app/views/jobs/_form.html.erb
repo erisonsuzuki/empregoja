@@ -14,8 +14,10 @@
   <%= f.label :description, 'Descrição' %>
   <%= f.text_field :description %>
 
-  <%= f.label :featured, 'Destaque' %>
-  <%= f.check_box :featured %>
+  <div class="highlight clearfix">
+    <%= f.check_box :featured %>
+    <%= f.label :featured, 'Destaque' %>
+  </div>
 
   <%= f.submit submit_tag %>
 <% end %>

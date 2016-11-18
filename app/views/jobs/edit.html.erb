@@ -1,9 +1,11 @@
 <div id="form-body">
-  <% if flash[:notice ] %>
+  <% if flash[:notice] %>
     <div class="message">
       <%= flash[:notice] %>
     </div>
   <% end %>
+
+  <h1>Editar Vaga</h1>
 
   <%= render partial: 'form', locals: { submit_tag: 'Atualizar Vaga' } %>
 </div>
